@@ -9,46 +9,74 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      serarchResults: [],
+
+      serarchResults: [
+        {
+          name: ' ',
+          artist: ' ',
+          album: ' ',
+          id: ' '
+        }
+      ],
+
+        playlistName: 'Your Playlist',
+        playlistTracks: [
+          {
+            name: ' ',
+            artist: ' ',
+            album: ' ',
+            id: ' '
+          }
+        ]
+      };
+
+      this.addTrack = this.addTrack.bind(this);
+
+      addTrack(track) {
+
       }
+
+
     }
 
-    render() {
-      return (
-        <Fragment>
-          <div className="App">
-            <header className="App-header">
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
+  render() {
+    return (
+      <Fragment>
+        <div className="App">
+          <header className="App-header">
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+            </p>
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+            </a>
+          </header>
+        </div>
 
-          <div>
-            <h1>Ja<span className="highlight">mmm</span>ing</h1>
-            <div className="App">
-                <SearchBar />
-              <div className="App-playlist">
-                <SearchResults searchResults={this.state.searchResults}/>
-                <Playlist />
-              </div>
+        <div>
+          <h1>Ja<span className="highlight">mmm</span>ing</h1>
+          <div className="App">
+              <SearchBar />
+            <div className="App-playlist">
+              <SearchResults onAdd={this.addTrack}
+                             searchResults={this.state.searchResults}/>
+              <Playlist playlistName={this.state.playlistName}
+                        playlistTracks={this.state.playlistTrack}/>
             </div>
           </div>
+        </div>
 
-        </Fragment>
+      </Fragment>
 
-      );
-    }
-
+    );
   }
+
+}
 
 
 export default App;
