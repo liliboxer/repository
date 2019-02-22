@@ -5,7 +5,7 @@ class TrackList extends Component {
   render() {
     return (
       <div className="TrackList">
-
+      <a className='tracks'>{this.props.searchResults}</a>
       </div>
     )
   }

@@ -5,6 +5,20 @@ import { SearchResults } from '../SearchResults/SearchResults.js';
 import { Playlist } from '../Playlist/Playlist.js'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      serarchResults: {
+        name: ,
+        artist: ,
+        album: ,
+        id:
+      }
+    }
+
+  }
+
   render() {
     return (
       <Fragment>
@@ -29,7 +43,7 @@ class App extends Component {
           <div className="App">
               <SearchBar />
             <div className="App-playlist">
-              <SearchResults />
+              <SearchResults searchResults={this.state.searchResults}/>
               <Playlist />
             </div>
           </div>
