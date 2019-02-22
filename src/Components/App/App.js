@@ -9,50 +9,46 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      serarchResults: {
-        name: ,
-        artist: ,
-        album: ,
-        id:
+      serarchResults: [],
       }
+    }
+
+    render() {
+      return (
+        <Fragment>
+          <div className="App">
+            <header className="App-header">
+              <p>
+                Edit <code>src/App.js</code> and save to reload.
+              </p>
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
+              </a>
+            </header>
+          </div>
+
+          <div>
+            <h1>Ja<span className="highlight">mmm</span>ing</h1>
+            <div className="App">
+                <SearchBar />
+              <div className="App-playlist">
+                <SearchResults searchResults={this.state.searchResults}/>
+                <Playlist />
+              </div>
+            </div>
+          </div>
+
+        </Fragment>
+
+      );
     }
 
   }
 
-  render() {
-    return (
-      <Fragment>
-        <div className="App">
-          <header className="App-header">
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-
-        <div>
-          <h1>Ja<span className="highlight">mmm</span>ing</h1>
-          <div className="App">
-              <SearchBar />
-            <div className="App-playlist">
-              <SearchResults searchResults={this.state.searchResults}/>
-              <Playlist />
-            </div>
-          </div>
-        </div>
-
-      </Fragment>
-
-    );
-  }
-}
 
 export default App;
