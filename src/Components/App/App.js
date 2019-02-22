@@ -33,7 +33,13 @@ class App extends Component {
       this.addTrack = this.addTrack.bind(this);
 
       addTrack(track) {
+        if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+          return;
+        }
+      }
 
+      removeTrack(track) {
+        
       }
 
 
