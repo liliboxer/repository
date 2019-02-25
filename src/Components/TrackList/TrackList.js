@@ -12,7 +12,10 @@ class TrackList extends Component {
                         name={this.props.track.name}
                         artist={this.props.track.artist}
                         album={this.props.track.album}
-                        onAdd={this.props.onAdd}/>
+                        onAdd={this.props.onAdd}
+                        onRemove={this.props.onRemove}
+                        isRemoval={this.props.onRemove}
+                        removeTrack/>
         })
       }
       </div>
