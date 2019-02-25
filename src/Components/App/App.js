@@ -36,6 +36,14 @@ class App extends Component {
         this.setState({PlaylistName: name});
       };
 
+      savePlaylist() {
+        trackURIs = []
+      };
+
+      search(term) {
+        console.log(term)
+      };
+
       render() {
         return (
           <Fragment>
@@ -58,13 +66,14 @@ class App extends Component {
             <div>
               <h1>Ja<span className="highlight">mmm</span>ing</h1>
               <div className="App">
-                  <SearchBar />
+                  <SearchBar onSearch={this.state.onSearch}/>
                 <div className="App-playlist">
                   <SearchResults onAdd={this.addTrack}
                                  searchResults={this.state.searchResults}/>
                   <Playlist playlistName={this.state.playlistName}
                             playlistTracks={this.state.playlistTrack}
-                            onRemove={this.removeTrack}/>
+                            onRemove={this.removeTrack}
+                            onSave={this.savePlaylist}/>
                 </div>
               </div>
             </div>
